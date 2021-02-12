@@ -1,0 +1,42 @@
+
+ONLINER.BY
+Найти на сайте элементы через CSS:
+1) по классу (одинарный или двойной, а так же неполное совпадение класса)
+
+	footer[class='b-main-page-blocks-footer-3 b-main-page-blocks-footer-3_specific cfix']>a[href='https://people.onliner.by']
+
+	footer[class*=' cfix']>a[href*='people']
+
+2) по айтишке (уникальная айдишка, а так же неполное совпадение айтишки)
+
+	#cart-desktop
+
+	div[id*=chat]
+
+3) вход в DOM(дерево)
+
+
+	div>a[class*=favor]
+
+Найти на сайте элементы через Xpath:
+4) поиск по полному совпадению аттрибута (1 локатор с тэгом, 1 со звездочкой)
+
+	//a[@class='btn-yellow __arr btn item']
+
+	//*[@href="http://baraholka.onliner.by"]
+
+5) поиск по частичному совпадению аттрибута (через контайнс, тоже с тэгом и звездочкой)
+
+	//a[contains(text(),'Разме')]
+
+	//*[contains(text(),'новости об авто')]
+
+6) локаторы на хождение вверх/вниз DOM-а
+	
+	//div[@class='b-main-page-grid-4 b-main-page-news-2'][3]/ul/li[3]
+
+	//div[@class='b-main-page-grid-4 b-main-page-news-2'][3]/ul/li[3]/../../../div[6]/header/h2/a
+
+7) комбинированные локаторы содержащие полное совпадение по классу и какой-либо contains (text или аттрибут не важно)
+
+	//*[@class='footer-3-button' and contains(text(), 'Все мнения')]
